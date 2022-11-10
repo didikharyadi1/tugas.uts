@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=1024, user-scalable=no">
+    <style>
+      html { height: 100% }
+      body { height: 100%; margin: 0; padding: 0;}
+      #map{ height: 100% }
+    </style>
+    <link rel="stylesheet" href="leaflet/leaflet.css" />
+<!--[if lte IE 8]>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.6.4/leaflet.ie.css" />
+<![endif]-->
+
+<script src="leaflet/leaflet-src.js"></script>
+<script type="text/javascript" src="leaflet/leaflet.ajax.js"></script>
+<script src="leaflet/spin.js"></script>
+<script src="leaflet/leaflet.spin.js"></script>
+
+
+    <title>TugasUAS </title>
+    </head>
+    <body>
+    <div id="map"></div>
+      <script type="text/javascript">
+
+    var m = L.map('map').setView([-8.7063873,116.3393212], 14);
+    var mopt = {
+        url:  'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
+        options: { attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>' }
+    };
+    var mq = L.tileLayer(mopt.url, mopt.options);
+    mq.addTo(m);
+
+function popUp(f,l){
+    var out = [];
+    if (f.properties){
+        for(key in f.properties){
+            out.push(key+": "+f.properties[key]);
+        }
+        l.bindPopup(out.join("<br />"));
+    }
+}
+var jsonTest = new L.GeoJSON.AJAX(["lombok_tengah"],{onEachFeature:popUp}).addTo(m);
+
+    var marker = L.marker([-8.588949, 116.3245473]).addTo(m)
+        .bindPopup('<b>Kecamatan Batukliang Utara.').openPopup();
+         var marker = L.marker([-8.6128812, 116.3103311]).addTo(m)
+                .bindPopup('<b>Kantor Camat Batukliang.').openPopup(); 
+                var marker = L.marker([-8.6942821, 116.3995881]).addTo(m)
+                .bindPopup('<b>Kantor Camat Janapria.').openPopup();
+                var marker = L.marker([-8.6525193, 116.1979991]).addTo(m)
+                .bindPopup('<b>Kantor Camat Jonggat.').openPopup();
+                var marker = L.marker([-8.6343426, 116.3548378]).addTo(m)
+                .bindPopup('<b>Kantor Camat Kopang.').openPopup();
+                var marker = L.marker([-8.7237617, 116.2390471]).addTo(m)
+                .bindPopup('<b>Kantor Camat Praya.').openPopup();
+                var marker = L.marker([-8.742301, 116.2410837]).addTo(m)
+                .bindPopup('<b>Kantor Camat Praya Barat.').openPopup();
+                var marker = L.marker([-8.7385415, 116.2015728]).addTo(m)
+                .bindPopup('<b>Kantor Camat Praya Barat Daya.').openPopup();
+                var marker = L.marker([-8.7340447, 116.316331]).addTo(m)
+                .bindPopup('<b>Kantor Camat Praya Tengah.').openPopup();
+                var marker = L.marker([-8.7614541, 116.3561055]).addTo(m)
+                .bindPopup('<b>Kantor Camat Praya Timur.').openPopup();
+                var marker = L.marker([-8.6190565, 116.2517066]).addTo(m)
+                .bindPopup('<b>Kantor Camat Pringgarata.').openPopup();
+                var marker = L.marker([-8.8004563, 116.292598]).addTo(m)
+                .bindPopup('<b>Kantor Camat Pujut.').openPopup();
+                var marker = L.marker([-8.70238, 116.29511]).addTo(m)
+                .bindPopup('<b>RSUD Praya.').openPopup();
+                var marker = L.marker([-8.7060444, 116.2726082]).addTo(m)
+                .bindPopup('<b>Puskesmas Praya.').openPopup();
+                var marker = L.marker([-8.7045539, 116.2712998]).addTo(m)
+                .bindPopup('<b>Alun Alun TASTURA.').openPopup();
+                var marker = L.marker([-8.7139106, 116.2869397]).addTo(m)
+                .bindPopup('<b>Taman Biao.').openPopup();
+                var marker = L.marker([-8.7141343, 116.2639882]).addTo(m)
+                .bindPopup('<b>Taman Tonjeng Beru.').openPopup()
+                 var marker = L.marker([-8.69091, 116.24968]).addTo(m)
+                .bindPopup('<b>kantor BUPATI.').openPopup();
+                var marker = L.marker([-8.7093713, 116.2793799]).addTo(m)
+                .bindPopup('<b>POLRES LOTENG.').openPopup();
+                var marker = L.marker([-8.7320897, 116.2726254]).addTo(m)
+                .bindPopup('<b>Bendungan Batujai.').openPopup();
+                var marker = L.marker([-8.7575494, 116.1880415]).addTo(m)
+                .bindPopup('<b>Bendungan Pengge.').openPopup();
+                var marker = L.marker([-8.69816, 116.25307]).addTo(m)
+                .bindPopup('<b>IPDN.').openPopup();
+                var marker = L.marker([-8.69823, 116.28242]).addTo(m)
+                .bindPopup('<b>STMIK LOMBOK.').openPopup();
+                var marker = L.marker([-8.76194, 116.27353]).addTo(m)
+                .bindPopup('<b>BANDARA INTERNASIONAL LOMBOK.').openPopup();
+                var marker = L.marker([-8.82126, 116.29379]).addTo(m)
+                .bindPopup('<b>Desa Wisata Sasak Ende.').openPopup();
+              
+</script>
+
+
+    </body>
+</html>
